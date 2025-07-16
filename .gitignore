@@ -10,7 +10,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Sadece kök dizindeki package-lock.json ignore edilsin
-
+/package-lock.json
 
 # Tüm .env dosyaları (gizli bilgiler)
 .env*
