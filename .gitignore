@@ -1,0 +1,44 @@
+# ====================
+# GENEL AYARLAR
+# ====================
+
+# Ortak Node.js ignore kuralları
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sadece kök dizindeki package-lock.json ignore edilsin
+/package-lock.json
+
+# Tüm .env dosyaları (gizli bilgiler)
+.env*
+.next/
+out/
+
+# Üretim çıktı klasörleri
+build/
+dist/
+
+# IDE ve sistem dosyaları
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+
+# Log dosyaları
+*.log
+
+# TypeScript derleyici artıkları
+*.tsbuildinfo
+
+# Tailwind JIT önbelleği
+.tailwind/
+
+# Önceden var olan alt Git repo kaldırıldıysa:
+client/.git/
