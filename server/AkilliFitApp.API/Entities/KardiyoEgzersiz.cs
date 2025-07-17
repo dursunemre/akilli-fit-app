@@ -6,7 +6,7 @@ namespace AkilliFitApp.API.Entities
     {
         public int Id { get; set; }
         public required string Ad { get; set; }
-        public ICollection<KardiyoEgzersizBilgi> ProgramKardiyoEgzersizler { get; set; } = new List<KardiyoEgzersizBilgi>();
+        public ICollection<KardiyoEgzersizBilgi> KardiyoEgzersizBilgi { get; set; } = new List<KardiyoEgzersizBilgi>();
 
         public KardiyoEgzersiz() { }
 

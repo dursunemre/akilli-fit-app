@@ -8,14 +8,7 @@ namespace AkilliFitApp.API.Entities
         public override string Ad => KardiyoEgzersiz.Ad;
         public double MesafeMtr { get; set; }
         public TimeOnly Sure { get; set; }
-        public double Hız
-        {
-            get
-            {
-                double saat = Sure.Hour + Sure.Minute / 60.0 + Sure.Second / 3600.0;
-                return MesafeMtr / saat;
-            }
-        }
+        public double Hız => Sure.Hour + Sure.Minute / 60.0 + Sure.Second / 3600.0;
         public double HedeflenenMesafe { get; set; }
         public TimeOnly HedeflenenSure { get; set; }
 
@@ -24,14 +17,14 @@ namespace AkilliFitApp.API.Entities
 
         public KardiyoEgzersizBilgi() { }
 
-        public KardiyoEgzersizBilgi(double mesafeMtr, TimeOnly sure, double hedeflenenMesafe, TimeOnly hedeflenenSure, KardiyoEgzersiz kardiyoEgzersizi, EgzersizProgram egzersizProgrami)
+        public KardiyoEgzersizBilgi(double mesafeMtr, TimeOnly sure, double hedeflenenMesafe, TimeOnly hedeflenenSure, KardiyoEgzersiz kardiyoEgzersiz, EgzersizProgram egzersizProgram)
         {
             MesafeMtr = mesafeMtr;
             Sure = sure;
             HedeflenenMesafe = hedeflenenMesafe;
             HedeflenenSure = hedeflenenSure;
-            KardiyoEgzersiz = kardiyoEgzersizi;
-            EgzersizProgram = egzersizProgrami;
+            this.KardiyoEgzersiz = kardiyoEgzersiz;
+            this.EgzersizProgram = egzersizProgram;
         }
     }
 }
