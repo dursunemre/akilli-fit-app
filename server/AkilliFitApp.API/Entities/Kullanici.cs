@@ -13,6 +13,6 @@ namespace AkilliFitApp.API.Entities
         public double HedefKilo { get; set; }
         public int AktiviteSeviyesi { get; set; }
         public required string ProfilResmiUrl { get; set; }
-        public ICollection<EgzersizProgramı> Programlar { get; set; } = new List<EgzersizProgramı>();
+        public ICollection<EgzersizProgram> Programlar { get; set; } = new List<EgzersizProgram>();
     }
 }
