@@ -12,6 +12,8 @@
         public double TotalYag { get { return Besin.Yag100gr * (Gramaj / 100.0); } }
         public double TotalKarbonhidrat { get { return Besin.Karbonhidrat100gr * (Gramaj / 100.0); } }
 
+        public required DiyetProgram DiyetPrograms { get; set; } 
+
         public DiyetBesin() { }
 
         public DiyetBesin(Besin besin, double gramaj)
