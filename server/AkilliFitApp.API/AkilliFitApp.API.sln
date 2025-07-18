@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6 d17.14
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.API", "AkilliFitApp.API.csproj", "{4C3C7449-9F16-475C-AD21-F76EBF870E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.Domain", "..\AkilliFitApp.Domain\AkilliFitApp.Domain.csproj", "{481943A3-6CAB-4C32-8C22-9CD38D1FC70F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.Application", "..\AkilliFitApp.Application\AkilliFitApp.Application.csproj", "{0E16ED51-1E85-4025-AA4C-88B6E61C27D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.Infrastructure", "..\AkilliFitApp.Infrastructure\AkilliFitApp.Infrastructure.csproj", "{CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{4C3C7449-9F16-475C-AD21-F76EBF870E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C3C7449-9F16-475C-AD21-F76EBF870E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C3C7449-9F16-475C-AD21-F76EBF870E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{481943A3-6CAB-4C32-8C22-9CD38D1FC70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481943A3-6CAB-4C32-8C22-9CD38D1FC70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481943A3-6CAB-4C32-8C22-9CD38D1FC70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481943A3-6CAB-4C32-8C22-9CD38D1FC70F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E16ED51-1E85-4025-AA4C-88B6E61C27D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E16ED51-1E85-4025-AA4C-88B6E61C27D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E16ED51-1E85-4025-AA4C-88B6E61C27D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E16ED51-1E85-4025-AA4C-88B6E61C27D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
