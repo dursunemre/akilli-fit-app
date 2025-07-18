@@ -29,12 +29,10 @@ namespace AkilliFitApp.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // 1) Root entity tipi üzerinde TPC stratejisini aç
             modelBuilder
                 .Entity<EgzersizBilgi>()
-                .UseTpcMappingStrategy();                 // :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}
+                .UseTpcMappingStrategy();               
 
-            // 2) İsteğe bağlı olarak tablo adlarını sabitle
             modelBuilder
                 .Entity<KardiyoEgzersizBilgi>()
                 .ToTable("KardiyoEgzersizBilgileri");
@@ -42,7 +40,6 @@ namespace AkilliFitApp.Infrastructure.Data
                 .Entity<AgirlikEgzersizBilgi>()
                 .ToTable("AgirlikEgzersizBilgileri");
 
-            // 3) Index’leri tanımlamaya devam edebilirsiniz
             modelBuilder.Entity<KardiyoEgzersizBilgi>()
                 .HasIndex(x => new { x.EgzersizProgramId, x.KardiyoEgzersizId })
                 .IsUnique();
@@ -50,7 +47,5 @@ namespace AkilliFitApp.Infrastructure.Data
                 .HasIndex(x => new { x.EgzersizProgramId, x.AgirlikEgzersizId })
                 .IsUnique();
         }
-
-
     }
 }
