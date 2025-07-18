@@ -4,12 +4,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.API", "AkilliFitApp.API.csproj", "{4C3C7449-9F16-475C-AD21-F76EBF870E04}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E16ED51-1E85-4025-AA4C-88B6E61C27D2} = {0E16ED51-1E85-4025-AA4C-88B6E61C27D2}
+		{481943A3-6CAB-4C32-8C22-9CD38D1FC70F} = {481943A3-6CAB-4C32-8C22-9CD38D1FC70F}
+		{CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F} = {CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.Domain", "..\AkilliFitApp.Domain\AkilliFitApp.Domain.csproj", "{481943A3-6CAB-4C32-8C22-9CD38D1FC70F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.Application", "..\AkilliFitApp.Application\AkilliFitApp.Application.csproj", "{0E16ED51-1E85-4025-AA4C-88B6E61C27D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{481943A3-6CAB-4C32-8C22-9CD38D1FC70F} = {481943A3-6CAB-4C32-8C22-9CD38D1FC70F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliFitApp.Infrastructure", "..\AkilliFitApp.Infrastructure\AkilliFitApp.Infrastructure.csproj", "{CED3C32B-F710-4BA6-87DE-DD24BD0BDB1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{481943A3-6CAB-4C32-8C22-9CD38D1FC70F} = {481943A3-6CAB-4C32-8C22-9CD38D1FC70F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

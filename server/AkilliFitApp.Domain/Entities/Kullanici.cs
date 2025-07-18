@@ -1,7 +1,10 @@
-﻿namespace AkilliFitApp.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AkilliFitApp.Domain.Entities
 {
     public class Kullanici
     {
+        [Key]
         public required string Uid { get; set; }
         public required string Ad { get; set; }
         public required string Soyad { get; set; }

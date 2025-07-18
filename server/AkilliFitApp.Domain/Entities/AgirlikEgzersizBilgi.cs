@@ -2,16 +2,16 @@
 {
     public class AgirlikEgzersizBilgi : EgzersizBilgi 
     {
-        public override string Ad => agirlikEgzersiz.Ad;
+        public override string Ad => AgirlikEgzersiz.Ad;
 
         public int Set { get; set; }
         public int Tekrar { get; set; }
         public double AgirlikKG { get; set; }
         public double HedeflenenAgirlikKG { get; set; }
-        public double EgzersizVolumeKG => Set * Tekrar * AgirlikKG; 
+        public double EgzersizVolumeKG => Set * Tekrar * AgirlikKG;
 
-        public required AgirlikEgzersiz agirlikEgzersiz { get; set; }
-        public required EgzersizProgram egzersizProgram { get; set; }
+        public int AgirlikEgzersizId { get; set; }
+        public required AgirlikEgzersiz AgirlikEgzersiz { get; set; }
 
         public AgirlikEgzersizBilgi() { }
 
@@ -21,8 +21,8 @@
             Tekrar = tekrar;
             AgirlikKG = agirlikKG;
             HedeflenenAgirlikKG = hedeflenenAgirlikKG;
-            this.kardiyoEgzersiz = agirlikEgzersiz;
-            this.egzersizProgram = egzersizProgram;
+            this.AgirlikEgzersiz = agirlikEgzersiz;
+            this.EgzersizProgram = egzersizProgram;
         }
     }
 }

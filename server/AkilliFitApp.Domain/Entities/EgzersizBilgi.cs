@@ -6,7 +6,10 @@ namespace AkilliFitApp.Domain.Entities
     {
         [Key]
         public virtual int Id { get; set; }
-        
+
+        public int EgzersizProgramId { get; set; }
+        public EgzersizProgram EgzersizProgram { get; set; } = null!;
+
         [Required]
         public abstract string Ad {  get; } 
     }

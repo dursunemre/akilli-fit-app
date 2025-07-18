@@ -11,8 +11,8 @@ namespace AkilliFitApp.Domain.Entities
         public double HedeflenenMesafe { get; set; }
         public TimeOnly HedeflenenSure { get; set; }
 
+        public int KardiyoEgzersizId { get; set; }
         public required KardiyoEgzersiz KardiyoEgzersiz { get; set; }
-        public required EgzersizProgram EgzersizProgram { get; set; }
 
         public KardiyoEgzersizBilgi() { }
 
@@ -22,8 +22,8 @@ namespace AkilliFitApp.Domain.Entities
             Sure = sure;
             HedeflenenMesafe = hedeflenenMesafe;
             HedeflenenSure = hedeflenenSure;
-            KardiyoEgzersiz = kardiyoEgzersiz;
-            EgzersizProgram = egzersizProgram;
+            this.KardiyoEgzersiz = kardiyoEgzersiz;
+            this.EgzersizProgram = egzersizProgram;
         }
     }
 }
