@@ -4,7 +4,6 @@ namespace AkilliFitApp.Domain.Entities
 {
     public class KardiyoEgzersizBilgi : EgzersizBilgi
     {
-        public override string Ad => KardiyoEgzersiz.Ad;
         public double MesafeMtr { get; set; }
         public TimeOnly Sure { get; set; }
         public double Hız => MesafeMtr / (Sure.Hour + Sure.Minute / 60.0 + Sure.Second / 3600.0);

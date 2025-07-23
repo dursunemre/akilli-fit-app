@@ -1,0 +1,16 @@
+using System;
+
+namespace AkilliFitApp.Application.DTOs
+{
+    public class KullaniciCreateDto
+    {
+        public string Ad { get; set; } = null!;
+        public string Soyad { get; set; } = null!;
+        public DateOnly DogumTarihi { get; set; }
+        public string Cinsiyet { get; set; } = null!;
+        public double Kilo { get; set; }
+        public double HedefKilo { get; set; }
+        public int AktiviteSeviyesi { get; set; }
+        public string? ProfilResmiUrl { get; set; }
+    }
+}

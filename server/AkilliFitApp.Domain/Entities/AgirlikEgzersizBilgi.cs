@@ -2,8 +2,6 @@
 {
     public class AgirlikEgzersizBilgi : EgzersizBilgi 
     {
-        public override string Ad => AgirlikEgzersiz.Ad;
-
         public int Set { get; set; }
         public int Tekrar { get; set; }
         public double AgirlikKG { get; set; }
@@ -21,8 +19,8 @@
             Tekrar = tekrar;
             AgirlikKG = agirlikKG;
             HedeflenenAgirlikKG = hedeflenenAgirlikKG;
-            this.AgirlikEgzersiz = agirlikEgzersiz;
-            this.EgzersizProgram = egzersizProgram;
+            AgirlikEgzersiz = agirlikEgzersiz;
+            EgzersizProgram = egzersizProgram;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class AgirlikEgzersiz 
     {
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public required string Ad { get; set; }
         public ICollection<AgirlikEgzersizBilgi> AgirlikEgzersizBilgileri { get; set; } = new List<AgirlikEgzersizBilgi>();
 
