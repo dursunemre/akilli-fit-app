@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using AkilliFitApp.Domain.Entities;
-using AkilliFitApp.Application.DTOs;
+using AkilliFitApp.Application.DTOs.Egzersiz.Program;
+using AkilliFitApp.Application.DTOs.EgzersizBilgi;
+using AkilliFitApp.Application.DTOs.Diyet.Besin;
+using AkilliFitApp.Application.DTOs.Diyet.Program;
+using AkilliFitApp.Application.DTOs.Kullanici;
 
 namespace AkilliFitApp.Application.Mapping
 {

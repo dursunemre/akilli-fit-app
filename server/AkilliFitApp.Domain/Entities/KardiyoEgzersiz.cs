@@ -2,10 +2,8 @@
 
 namespace AkilliFitApp.Domain.Entities
 {
-    public class KardiyoEgzersiz 
+    public class KardiyoEgzersiz : Egzersiz
     {
-        public int Id { get; set; }
-        public required string Ad { get; set; }
         public ICollection<KardiyoEgzersizBilgi> KardiyoEgzersizBilgileri { get; set; } = new List<KardiyoEgzersizBilgi>();
 
         public KardiyoEgzersiz() { }

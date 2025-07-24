@@ -10,19 +10,22 @@ namespace AkilliFitApp.Domain.Entities
         public double HedeflenenMesafe { get; set; }
         public TimeOnly HedeflenenSure { get; set; }
 
-        public int KardiyoEgzersizId { get; set; }
-        public required KardiyoEgzersiz KardiyoEgzersiz { get; set; }
-
         public KardiyoEgzersizBilgi() { }
 
-        public KardiyoEgzersizBilgi(double mesafeMtr, TimeOnly sure, double hedeflenenMesafe, TimeOnly hedeflenenSure, KardiyoEgzersiz kardiyoEgzersiz, EgzersizProgram egzersizProgram)
+        public KardiyoEgzersizBilgi(double mesafeMtr, TimeOnly sure, double hedeflenenMesafe, TimeOnly hedeflenenSure, Egzersiz kardiyoEgzersiz, EgzersizProgram egzersizProgram)
         {
+            if (kardiyoEgzersiz is not KardiyoEgzersiz)
+                throw new ArgumentException(
+                  "KardiyoEgzersizBilgi için mutlaka KardiyoEgzersiz örneği gelmeli.",
+                  nameof(kardiyoEgzersiz)
+                );
+
             MesafeMtr = mesafeMtr;
             Sure = sure;
             HedeflenenMesafe = hedeflenenMesafe;
             HedeflenenSure = hedeflenenSure;
-            this.KardiyoEgzersiz = kardiyoEgzersiz;
-            this.EgzersizProgram = egzersizProgram;
+            Egzersiz = kardiyoEgzersiz;
+            EgzersizProgram = egzersizProgram;
         }
     }
 }

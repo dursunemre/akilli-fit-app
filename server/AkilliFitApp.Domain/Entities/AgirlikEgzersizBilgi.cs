@@ -8,18 +8,21 @@
         public double HedeflenenAgirlikKG { get; set; }
         public double EgzersizVolumeKG => Set * Tekrar * AgirlikKG;
 
-        public int AgirlikEgzersizId { get; set; }
-        public required AgirlikEgzersiz AgirlikEgzersiz { get; set; }
-
         public AgirlikEgzersizBilgi() { }
 
-        public AgirlikEgzersizBilgi(int set, int tekrar, double agirlikKG, double hedeflenenAgirlikKG, AgirlikEgzersiz agirlikEgzersiz, EgzersizProgram egzersizProgram)
+        public AgirlikEgzersizBilgi(int set, int tekrar, double agirlikKG, double hedeflenenAgirlikKG, Egzersiz agirlikEgzersiz, EgzersizProgram egzersizProgram)
         {
+            if (agirlikEgzersiz is not AgirlikEgzersiz)
+                throw new ArgumentException(
+                  "AgirlikEgzersizBilgi için mutlaka AgirlikEgzersiz örneği gelmeli.",
+                  nameof(agirlikEgzersiz)
+                );
+
             Set = set;
             Tekrar = tekrar;
             AgirlikKG = agirlikKG;
             HedeflenenAgirlikKG = hedeflenenAgirlikKG;
-            AgirlikEgzersiz = agirlikEgzersiz;
+            Egzersiz = agirlikEgzersiz;
             EgzersizProgram = egzersizProgram;
         }
     }

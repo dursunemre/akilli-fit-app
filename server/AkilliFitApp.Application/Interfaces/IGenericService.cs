@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Application.Interfaces
 {
-    internal interface IGenericService<TEntity> where TEntity : class
+    public interface IGenericService<TEntity> where TEntity : class
     {
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(int id);
-        Task AddAsync(TEntity entity);
+        Task<TEntity> AddAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
         Task DeleteAsync(TEntity entity);
     }

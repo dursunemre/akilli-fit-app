@@ -31,7 +31,7 @@ namespace AkilliFitApp.Infrastructure.Data
 
             modelBuilder
                 .Entity<EgzersizBilgi>()
-                .UseTpcMappingStrategy();               
+                .UseTpcMappingStrategy();
 
             modelBuilder
                 .Entity<KardiyoEgzersizBilgi>()
@@ -41,11 +41,20 @@ namespace AkilliFitApp.Infrastructure.Data
                 .ToTable("AgirlikEgzersizBilgileri");
 
             modelBuilder.Entity<KardiyoEgzersizBilgi>()
-                .HasIndex(x => new { x.EgzersizProgramId, x.KardiyoEgzersizId })
+                .HasIndex(x => new { x.EgzersizProgramId, x.EgzersizId })
                 .IsUnique();
             modelBuilder.Entity<AgirlikEgzersizBilgi>()
-                .HasIndex(x => new { x.EgzersizProgramId, x.AgirlikEgzersizId })
+                .HasIndex(x => new { x.EgzersizProgramId, x.EgzersizId })
                 .IsUnique();
+
+            modelBuilder.Entity<Egzersiz>()
+            .UseTpcMappingStrategy();
+
+            modelBuilder.Entity<AgirlikEgzersiz>()
+                .ToTable("AgirlikEgzersiz");
+
+            modelBuilder.Entity<KardiyoEgzersiz>()
+                .ToTable("KardiyoEgzersiz");
         }
     }
 }

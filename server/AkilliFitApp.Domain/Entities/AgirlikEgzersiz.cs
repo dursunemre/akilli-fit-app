@@ -1,9 +1,7 @@
 ﻿namespace AkilliFitApp.Domain.Entities
 {
-    public class AgirlikEgzersiz 
+    public class AgirlikEgzersiz : Egzersiz
     {
-        public int Id { get; private set; }
-        public required string Ad { get; set; }
         public ICollection<AgirlikEgzersizBilgi> AgirlikEgzersizBilgileri { get; set; } = new List<AgirlikEgzersizBilgi>();
 
         public AgirlikEgzersiz() { }
