@@ -1,59 +1,48 @@
-﻿using AkilliFitApp.Application.Interfaces;
-using AkilliFitApp.Infrastructure;
-using AkilliFitApp.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using AkilliFitApp.Application.Interfaces;
 
 namespace AkilliFitApp.Application.Services
 {
-    public class GenericServices<TEntity> : IGenericService<TEntity> where TEntity : class
+    public class GenericService<TEntity> : IGenericService<TEntity>
+        where TEntity : class
     {
-        private readonly AkilliFitAppDbContext _context;
+        private readonly IGenericRepository<TEntity> _repository;
 
-        public GenericServices(AkilliFitAppDbContext context)
+        public GenericService(IGenericRepository<TEntity> repository)
         {
-            _context = context; 
+            _repository = repository;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await _context.Set<TEntity>().ToListAsync();
+            return _repository.GetAllAsync();
         }
 
         public async Task<TEntity> GetByIdAsync(int id)
         {
-            var entity = await _context.Set<TEntity>().FindAsync(id);
-
-            if(entity == null)
-            {
+            var entity = await _repository.GetByIdAsync(id);
+            if (entity == null)
                 throw new KeyNotFoundException($"Entity with ID {id} not found.");
-            }
-
             return entity;
         }
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
-            await _context.Set<TEntity>().AddAsync(entity);
-            await _context.SaveChangesAsync();
+            await _repository.AddAsync(entity);
             return entity;
         }
 
         public async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            _context.Set<TEntity>().Update(entity);
-            await _context.SaveChangesAsync();
+            await _repository.UpdateAsync(entity);
             return entity;
         }
 
-        public async Task DeleteAsync(TEntity entity)
+        public Task DeleteAsync(TEntity entity)
         {
-            _context.Set<TEntity>().Remove(entity);
-            await _context.SaveChangesAsync();
+            return _repository.DeleteAsync(entity);
         }
     }
 }

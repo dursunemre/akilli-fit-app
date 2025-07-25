@@ -1,7 +1,8 @@
 using AkilliFitApp.Application.Interfaces;
-using AkilliFitApp.Application.Services;
 using AkilliFitApp.Application.Mapping;
+using AkilliFitApp.Application.Services;
 using AkilliFitApp.Infrastructure.Data;
+using AkilliFitApp.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,7 +16,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericServices<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(EfGenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 
 var app = builder.Build();
 

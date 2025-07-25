@@ -19,6 +19,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AkilliFitApp.Domain\AkilliFitApp.Domain.csproj" />
-	<ProjectReference Include="..\AkilliFitApp.Infrastructure\AkilliFitApp.Infrastructure.csproj" />  
   </ItemGroup>
 </Project>
