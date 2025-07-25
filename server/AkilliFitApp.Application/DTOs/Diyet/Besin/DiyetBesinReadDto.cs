@@ -5,6 +5,7 @@ namespace AkilliFitApp.Application.DTOs.Diyet.Besin
 {
     public class DiyetBesinReadDto
     {
+        public int Id { get; set; }
         public string Ad { get; set; } = null!;
         public double Gramaj { get; set; }
         public double TotalKalori;

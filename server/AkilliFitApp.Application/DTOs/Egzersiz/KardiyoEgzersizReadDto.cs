@@ -3,11 +3,8 @@ using AkilliFitApp.Application.DTOs.EgzersizBilgi;
 
 namespace AkilliFitApp.Application.DTOs.Egzersiz
 {
-    public class KardiyoEgzersizReadDto 
+    public class KardiyoEgzersizReadDto : EgzersizReadDto
     {
-        public int Id { get; set; }
-        public string Ad { get; set; } = null!;
-
         public ICollection<KardiyoEgzersizBilgiReadDto> KardiyoEgzersizBilgileri { get; set; } = [];
     }
 }
