@@ -1,4 +1,5 @@
-using System;
+using AkilliFitApp.Domain.Entities;
+using AkilliFitApp.Application.DTOs.Egzersiz.Program;
 
 namespace AkilliFitApp.Application.DTOs.Kullanici
 {
@@ -13,5 +14,7 @@ namespace AkilliFitApp.Application.DTOs.Kullanici
         public double HedefKilo { get; set; }
         public int AktiviteSeviyesi { get; set; }
         public string? ProfilResmiUrl { get; set; }
+
+        public ICollection<EgzersizProgramReadDto> Programlar { get; set; } = [];
     }
 }

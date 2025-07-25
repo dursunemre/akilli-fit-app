@@ -1,3 +1,4 @@
+using AkilliFitApp.Domain.Entities;
 namespace AkilliFitApp.Application.DTOs.Diyet.Besin
 {
     public class BesinReadDto
@@ -8,5 +9,7 @@ namespace AkilliFitApp.Application.DTOs.Diyet.Besin
         public double Protein100gr { get; set; }
         public double Yag100gr { get; set; }
         public double Karbonhidrat100gr { get; set; }
+
+        public ICollection<DiyetBesinReadDto> DiyetBesinler { get; set; } = [];
     }
 }

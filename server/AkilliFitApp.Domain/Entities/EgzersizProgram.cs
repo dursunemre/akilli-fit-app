@@ -4,8 +4,11 @@
     {
         public int Id { get; set; }
         public required string Ad { get; set; }
+
+        public int KullaniciId { get; set; }
         public required Kullanici Kullanici { get; set; }
-        public ICollection<EgzersizBilgi> EgzersizBilgi { get; set; } = new List<EgzersizBilgi>();
+        public ICollection<EgzersizBilgi> EgzersizBilgi { get; set; } = [];
+
         public EgzersizProgram() { }
 
         public EgzersizProgram(string ad, Kullanici kullanici)

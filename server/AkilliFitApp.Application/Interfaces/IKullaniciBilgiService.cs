@@ -1,4 +1,4 @@
-﻿using AkilliFitApp.Application.DTOs.Wrapper;
+﻿using AkilliFitApp.Application.DTOs.Kullanici;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace AkilliFitApp.Application.Interfaces
 {
     public interface IKullaniciBilgiService
     {
-        Task<KullaniciBilgileriReadDto> GetKullaniciBilgileriAsync(int kullaniciId);
+        Task<KullaniciReadDto> GetKullaniciBilgileriAsync(int kullaniciId);
     }
 }

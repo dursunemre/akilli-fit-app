@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public required string Ad { get; set; }
-        public ICollection<DiyetBesin> DiyetBesinleri { get; set; } = new List<DiyetBesin>();
+        public ICollection<DiyetBesin> DiyetBesinleri { get; set; } = [];
 
         public DiyetProgram() { }
 

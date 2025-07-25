@@ -1,3 +1,5 @@
+using AkilliFitApp.Domain.Entities;
+
 namespace AkilliFitApp.Application.DTOs.EgzersizBilgi
 {
     public class AgirlikEgzersizBilgiReadDto : EgzersizBilgiReadDto

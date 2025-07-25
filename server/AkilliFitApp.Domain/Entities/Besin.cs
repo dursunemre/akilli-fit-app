@@ -10,7 +10,7 @@
         public double Yag100gr { get; set; }
         public double Karbonhidrat100gr { get; set; }
 
-        public ICollection<DiyetBesin> DiyetBesinler { get; set; } = new List<DiyetBesin>();
+        public ICollection<DiyetBesin> DiyetBesinler { get; set; } = [];
 
         public Besin() { }
 

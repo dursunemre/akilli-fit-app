@@ -2,7 +2,7 @@
 {
     public class AgirlikEgzersiz : Egzersiz
     {
-        public ICollection<AgirlikEgzersizBilgi> AgirlikEgzersizBilgileri { get; set; } = new List<AgirlikEgzersizBilgi>();
+        public ICollection<AgirlikEgzersizBilgi> AgirlikEgzersizBilgileri { get; set; } = [];
 
         public AgirlikEgzersiz() { }
 
