@@ -1,5 +1,6 @@
 using AkilliFitApp.Domain.Entities;
 using AkilliFitApp.Application.DTOs.Egzersiz.Program;
+using AkilliFitApp.Application.DTOs.Diyet.Program;
 
 namespace AkilliFitApp.Application.DTOs.Kullanici
 {
@@ -15,6 +16,7 @@ namespace AkilliFitApp.Application.DTOs.Kullanici
         public int AktiviteSeviyesi { get; set; }
         public string? ProfilResmiUrl { get; set; }
 
-        public ICollection<EgzersizProgramReadDto> Programlar { get; set; } = [];
+        public ICollection<EgzersizProgramReadDto> EgzersizProgramlar { get; set; } = [];
+        public ICollection<DiyetProgramReadDto> DiyetProgramlar { get; set; } = [];
     }
 }

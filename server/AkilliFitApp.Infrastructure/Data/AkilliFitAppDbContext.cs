@@ -55,6 +55,9 @@ namespace AkilliFitApp.Infrastructure.Data
 
             modelBuilder.Entity<KardiyoEgzersiz>()
                 .ToTable("KardiyoEgzersiz");
+
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AkilliFitAppDbContext).Assembly);
+
         }
     }
 }
