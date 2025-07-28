@@ -24,6 +24,7 @@ namespace AkilliFitApp.Infrastructure.Data
         public DbSet<KardiyoEgzersizBilgi> KardiyoEgzersizBilgileri { get; set; }
         public DbSet<AgirlikEgzersizBilgi> AgirlikEgzersizBilgileri { get; set; }
         public DbSet<EgzersizProgram> EgzersizProgramlari { get; set; }
+        public DbSet<EgzersizNot> EgzersizNotlari { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

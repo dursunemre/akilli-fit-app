@@ -14,7 +14,7 @@
         public int BesinId { get; set; }
         public required Besin Besin { get; set; }
         public int DiyetProgramId { get; set; }
-        public required DiyetProgram DiyetPrograms { get; set; } 
+        public required DiyetProgram DiyetProgram { get; set; } 
 
         public DiyetBesin() { }
 
@@ -22,7 +22,7 @@
         {
             Gramaj = gramaj;
             Besin = besin;
-            DiyetPrograms = diyetProgram;
+            DiyetProgram = diyetProgram;
         }
     }
 }

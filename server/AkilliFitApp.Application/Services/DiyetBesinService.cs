@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Application.Services
 {
-    internal class DiyetBesinService
+    public class DiyetBesinService
     {
         private readonly IDiyetBesinRepository _repository;
 

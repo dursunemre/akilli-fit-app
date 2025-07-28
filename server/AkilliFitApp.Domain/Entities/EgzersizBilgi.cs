@@ -9,5 +9,7 @@ namespace AkilliFitApp.Domain.Entities
         public EgzersizProgram EgzersizProgram { get; set; } = null!;
         public int EgzersizId { get; set; }
         public Egzersiz Egzersiz { get; set; } = null!;
+        public int EgzersizNotId { get; set; }
+        public required EgzersizNot EgzersizNot { get; set; }
     }
 }

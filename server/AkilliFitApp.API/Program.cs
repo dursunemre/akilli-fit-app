@@ -20,7 +20,10 @@ builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IKullaniciService), typeof(KullaniciService));
 builder.Services.AddScoped(typeof(IEgzersizBilgiService), typeof(EgzersizBilgiService));
-builder.Services.AddScoped(typeof(IEgzersizProgramService), typeof(IEgzersizProgramService));
+builder.Services.AddScoped(typeof(IEgzersizProgramService), typeof(EgzersizProgramService));
+builder.Services.AddScoped(typeof(IDiyetProgramService), typeof(DiyetProgramService));
+builder.Services.AddScoped(typeof(IDiyetBesinService), typeof(DiyetBesinService));
+
 
 
 var app = builder.Build();
