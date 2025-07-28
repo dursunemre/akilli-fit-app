@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Application.Interfaces.IRepository
 {
-    public interface IKullanıcıRepository
+    public interface IKullaniciRepository
     {
         Task<Kullanici?> GetByIdAsync(int kullaniciId);
         Task<Kullanici> AddAsync(Kullanici entity);

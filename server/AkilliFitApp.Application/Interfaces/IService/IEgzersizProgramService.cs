@@ -7,12 +7,12 @@ using AkilliFitApp.Domain.Entities;
 
 namespace AkilliFitApp.Application.Interfaces.IService
 {
-    public interface IEgzersizProgramService<TEntity> 
+    public interface IEgzersizProgramService
     {
-        Task<List<TEntity?>> GetAllAsync(int id);
-        Task<TEntity?> GetByIdAsync(int id);
-        Task<TEntity> CreateAsync(EgzersizProgram egzersizProgram);
-        Task<TEntity> UpdateAsync(EgzersizProgram egzersizProgram);
-        Task DeleteAsync(TEntity entity);
+        Task<IEnumerable<EgzersizProgram?>> GetAllAsync(int kullaniciId);
+        Task<EgzersizProgram?> GetByIdAsync(int programId);
+        Task<EgzersizProgram> AddAsync(EgzersizProgram egzersizProgram);
+        Task<EgzersizProgram> UpdateAsync(EgzersizProgram egzersizProgram);
+        Task DeleteAsync(EgzersizProgram entity);
     }
 }
