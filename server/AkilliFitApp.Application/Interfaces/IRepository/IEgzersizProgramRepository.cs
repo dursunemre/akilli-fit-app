@@ -10,9 +10,9 @@ namespace AkilliFitApp.Application.Interfaces.IRepository
     public interface IEgzersizProgramRepository
     {
         Task<IEnumerable<EgzersizProgram?>> GetAllAsync(int kullaniciId);
-        Task<EgzersizProgram?> GetByIdAsync(int programId);
-        Task<EgzersizProgram> AddAsync(EgzersizProgram entity);
-        Task<EgzersizProgram> UpdateAsync(EgzersizProgram entity);
-        Task DeleteAsync(EgzersizProgram entity);
+        Task<EgzersizProgram?> GetByIdAsync(int egzersizProgramId);
+        Task<EgzersizProgram> AddAsync(EgzersizProgram egzersizProgram);
+        Task<EgzersizProgram> UpdateAsync(EgzersizProgram egzersizProgram);
+        Task DeleteAsync(EgzersizProgram egzersizProgram);
     }
 }

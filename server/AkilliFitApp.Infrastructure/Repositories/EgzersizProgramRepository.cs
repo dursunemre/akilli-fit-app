@@ -36,19 +36,19 @@ namespace AkilliFitApp.Infrastructure.Repositories
             return await _repository.GetByIdAsync(programId);
         } 
 
-        public async Task<EgzersizProgram> AddAsync(EgzersizProgram entity)
+        public async Task<EgzersizProgram> AddAsync(EgzersizProgram egzersizProgram)
         {
-            return await _repository.AddAsync(entity);
+            return await _repository.AddAsync(egzersizProgram);
         }
 
-        public async Task<EgzersizProgram> UpdateAsync(EgzersizProgram entity)
+        public async Task<EgzersizProgram> UpdateAsync(EgzersizProgram egzersizProgram)
         {
-            return await _repository.UpdateAsync(entity);
+            return await _repository.UpdateAsync(egzersizProgram);
         }
 
-        public async Task DeleteAsync(EgzersizProgram entity)
+        public async Task DeleteAsync(EgzersizProgram egzersizProgram)
         {
-            await _repository.DeleteAsync(entity);
+            await _repository.DeleteAsync(egzersizProgram);
         }
     }
 }

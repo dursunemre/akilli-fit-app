@@ -10,9 +10,9 @@ namespace AkilliFitApp.Application.Interfaces.IService
 {
     public interface IKullaniciService
     {
-        Task<Kullanici?> GetByIdAsync(int id);
-        Task<Kullanici> AddAsync(Kullanici entity);
-        Task<Kullanici> UpdateAsync(Kullanici entity);
-        Task DeleteAsync(Kullanici entity);
+        Task<Kullanici?> GetByIdAsync(int kullaniciId);
+        Task<Kullanici> AddAsync(Kullanici kullanici);
+        Task<Kullanici> UpdateAsync(Kullanici kullanici);
+        Task DeleteAsync(Kullanici kullanici);
     }
 }

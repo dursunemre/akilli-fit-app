@@ -29,21 +29,21 @@ namespace AkilliFitApp.Infrastructure.Repositories
             return found;
         }
 
-        public async Task<Kullanici> AddAsync(Kullanici entity)
+        public async Task<Kullanici> AddAsync(Kullanici kullanici)
         {
-            var created = await _repository.AddAsync(entity);
+            var created = await _repository.AddAsync(kullanici);
             return created;
         }
 
-        public async Task<Kullanici> UpdateAsync(Kullanici entity)
+        public async Task<Kullanici> UpdateAsync(Kullanici kullanici)
         {
-            var updated = await _repository.UpdateAsync(entity);
+            var updated = await _repository.UpdateAsync(kullanici);
             return updated;
         }
 
-        public async Task DeleteAsync(Kullanici entity)
+        public async Task DeleteAsync(Kullanici kullanici)
         {
-            await _repository.DeleteAsync(entity);
+            await _repository.DeleteAsync(kullanici);
         }
     }
 }

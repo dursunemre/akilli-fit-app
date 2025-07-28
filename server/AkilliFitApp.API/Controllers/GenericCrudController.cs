@@ -1,4 +1,5 @@
-﻿using AkilliFitApp.Application.DTOs;
+﻿/*
+using AkilliFitApp.Application.DTOs;
 using AkilliFitApp.Application.Mapping;
 using AkilliFitApp.Domain.Entities;
 using AutoMapper;
@@ -102,4 +103,4 @@ namespace AkilliFitApp.API.Controllers
             return NoContent();
         }
     }
-}
+} */

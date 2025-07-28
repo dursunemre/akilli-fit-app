@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Application.Services
 {
-    internal class EgzersizProgramService : IEgzersizProgramService
+    public class EgzersizProgramService : IEgzersizProgramService
     {
         private readonly IEgzersizProgramRepository _repository;
 

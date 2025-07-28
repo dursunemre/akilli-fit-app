@@ -14,34 +14,32 @@ namespace AkilliFitApp.Application.Services
     public class KullaniciService : IKullaniciService
     {
         private readonly IKullaniciRepository _repository;
-        private readonly IGenericService<Kullanici> _genericService;
-        public KullaniciService(IKullaniciRepository repository, IGenericService<Kullanici> genericService)
+        public KullaniciService(IKullaniciRepository repository)
         {
             _repository = repository;
-            _genericService = genericService;
         }
 
-        public async Task<Kullanici?> GetByIdAsync(int id)
+        public async Task<Kullanici?> GetByIdAsync(int kullaniciId)
         {
-            var found = await _genericService.GetByIdAsync(id);
+            var found = await _repository.GetByIdAsync(kullaniciId);
             return found;
         }
 
-        public async Task<Kullanici> AddAsync(Kullanici entity)
+        public async Task<Kullanici> AddAsync(Kullanici kullanici)
         {
-            var created = await _genericService.AddAsync(entity);
+            var created = await _repository.AddAsync(kullanici);
             return created;
         }
 
-        public async Task<Kullanici> UpdateAsync(Kullanici entity)
+        public async Task<Kullanici> UpdateAsync(Kullanici kullanici)
         {
-            var updated = await _genericService.UpdateAsync(entity);
+            var updated = await _repository.UpdateAsync(kullanici);
             return updated;
         }
 
-        public async Task DeleteAsync(Kullanici entity)
+        public async Task DeleteAsync(Kullanici kullanici)
         {
-            await _genericService.DeleteAsync(entity);
+            await _repository.DeleteAsync(kullanici);
         }
     }
 }
