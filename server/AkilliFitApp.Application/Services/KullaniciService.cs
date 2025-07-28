@@ -1,6 +1,7 @@
 ﻿using AkilliFitApp.Application;
 using AkilliFitApp.Application.DTOs.Kullanici;
-using AkilliFitApp.Application.Interfaces;
+using AkilliFitApp.Application.Interfaces.IRepository;
+using AkilliFitApp.Application.Interfaces.IService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,9 @@ namespace AkilliFitApp.Application.Services
     public class KullaniciService<TEntity> : IKullaniciService<TEntity>
         where TEntity : class
     {
-        private readonly IGenericRepository<TEntity> _repository;
+        private readonly IKullanıcıRepository<TEntity> _repository;
         private readonly IGenericService<TEntity> _genericService;
-        public KullaniciService(IGenericRepository<TEntity> repository, IGenericService<TEntity> genericService)
+        public KullaniciService(IKullanıcıRepository<TEntity> repository, IGenericService<TEntity> genericService)
         {
             _repository = repository;
             _genericService = genericService;

@@ -1,9 +1,9 @@
 ﻿using AkilliFitApp.Application.DTOs;
 using AkilliFitApp.Application.Mapping;
-using AkilliFitApp.Application.Interfaces;
 using AkilliFitApp.Domain.Entities;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using AkilliFitApp.Application.Interfaces.IService;
 
 
 namespace AkilliFitApp.API.Controllers

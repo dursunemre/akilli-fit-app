@@ -1,4 +1,5 @@
-using AkilliFitApp.Application.Interfaces;
+using AkilliFitApp.Application.Interfaces.IRepository;
+using AkilliFitApp.Application.Interfaces.IService;
 using AkilliFitApp.Application.Mapping;
 using AkilliFitApp.Application.Services;
 using AkilliFitApp.Infrastructure.Data;
@@ -16,7 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(EfGenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 builder.Services.AddScoped(typeof(IKullaniciService<>), typeof(KullaniciService<>));
 

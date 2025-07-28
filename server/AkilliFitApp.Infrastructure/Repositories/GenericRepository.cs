@@ -1,4 +1,4 @@
-﻿using AkilliFitApp.Application.Interfaces;
+﻿using AkilliFitApp.Application.Interfaces.IRepository;
 using AkilliFitApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Infrastructure.Repositories
 {
-    public class EfGenericRepository<TEntity> : IGenericRepository<TEntity>
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity>
         where TEntity : class
     {
         private readonly AkilliFitAppDbContext _context;
         private readonly DbSet<TEntity> _dbSet;
 
-        public EfGenericRepository(AkilliFitAppDbContext context)
+        public GenericRepository(AkilliFitAppDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<TEntity>();

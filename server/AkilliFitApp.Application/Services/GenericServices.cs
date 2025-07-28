@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AkilliFitApp.Application.Interfaces;
+using AkilliFitApp.Application.Interfaces.IRepository;
+using AkilliFitApp.Application.Interfaces.IService;
 
 namespace AkilliFitApp.Application.Services
 {

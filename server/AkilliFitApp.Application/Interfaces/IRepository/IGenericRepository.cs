@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AkilliFitApp.Application.Interfaces
+namespace AkilliFitApp.Application.Interfaces.IRepository
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {
