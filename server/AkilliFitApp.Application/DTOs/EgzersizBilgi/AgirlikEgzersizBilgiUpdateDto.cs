@@ -1,6 +1,6 @@
 namespace AkilliFitApp.Application.DTOs.EgzersizBilgi
 {
-    public class AgirlikEgzersizBilgiUpdateDto
+    public class AgirlikEgzersizBilgiUpdateDto : EgzersizBilgiUpdateDto
     {
         public int Set { get; set; }
         public int Tekrar { get; set; }

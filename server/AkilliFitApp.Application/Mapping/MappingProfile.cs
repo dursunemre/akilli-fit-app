@@ -30,13 +30,21 @@ namespace AkilliFitApp.Application.Mapping
             CreateMap<EgzersizProgram, EgzersizProgramReadDto>();
             CreateMap<EgzersizProgramUpdateDto, EgzersizProgram>();
 
+            CreateMap<EgzersizBilgi, EgzersizBilgiReadDto>()
+                .Include<AgirlikEgzersizBilgi, AgirlikEgzersizBilgiReadDto>()
+                .Include<KardiyoEgzersizBilgi, KardiyoEgzersizBilgiReadDto>();
+            CreateMap<EgzersizBilgi, EgzersizBilgiCreateDto>()
+                .Include<AgirlikEgzersizBilgi, AgirlikEgzersizBilgiCreateDto>()
+                .Include<KardiyoEgzersizBilgi, KardiyoEgzersizBilgiCreateDto>();
+            CreateMap<EgzersizBilgi, EgzersizBilgiUpdateDto>()
+                .Include<AgirlikEgzersizBilgi, AgirlikEgzersizBilgiUpdateDto>()
+                .Include<KardiyoEgzersizBilgi, KardiyoEgzersizBilgiUpdateDto>();
 
             CreateMap<AgirlikEgzersizBilgiCreateDto, AgirlikEgzersizBilgi>();
             CreateMap<AgirlikEgzersizBilgi, AgirlikEgzersizBilgiReadDto>();
             CreateMap<AgirlikEgzersizBilgiUpdateDto, AgirlikEgzersizBilgi>()
                 .ForAllMembers(opt =>
                     opt.Condition((src, dest, srcMember) => srcMember != null));
-
 
             CreateMap<KardiyoEgzersizBilgiCreateDto, KardiyoEgzersizBilgi>();
             CreateMap<KardiyoEgzersizBilgi, KardiyoEgzersizBilgiReadDto>();

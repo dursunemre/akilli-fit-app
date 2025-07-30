@@ -2,7 +2,7 @@ using System;
 
 namespace AkilliFitApp.Application.DTOs.EgzersizBilgi
 {
-    public class KardiyoEgzersizBilgiUpdateDto
+    public class KardiyoEgzersizBilgiUpdateDto : EgzersizBilgiUpdateDto
     {
         public double MesafeMtr { get; set; }
         public TimeOnly Sure { get; set; }

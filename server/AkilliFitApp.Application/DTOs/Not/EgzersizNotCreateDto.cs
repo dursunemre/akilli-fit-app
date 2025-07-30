@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Application.DTOs.Not
 {
-    internal class EgzersizNotCreateDto
+    public class EgzersizNotCreateDto
     {
         public string Ad { get; set; } = string.Empty;
         public string Icerik { get; set; } = string.Empty;
