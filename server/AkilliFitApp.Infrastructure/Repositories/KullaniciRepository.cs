@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Infrastructure.Repositories
 {
-    internal class KullaniciRepository : IKullaniciRepository
+    public class KullaniciRepository : IKullaniciRepository
     {
         private readonly IGenericRepository<Kullanici> _repository;
         private readonly AkilliFitAppDbContext _context;

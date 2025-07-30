@@ -1,3 +1,4 @@
+using AkilliFitApp.Application.DTOs.EgzersizBilgi;
 using AkilliFitApp.Application.Interfaces.IRepository;
 using AkilliFitApp.Application.Interfaces.IService;
 using AkilliFitApp.Application.Mapping;
@@ -17,12 +18,23 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
+
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IKullaniciRepository), typeof(KullaniciRepository));
+builder.Services.AddScoped(typeof(IEgzersizBilgiRepository), typeof(EgzersizBilgiRepository));
+builder.Services.AddScoped(typeof(IEgzersizProgramRepository), typeof(EgzersizProgramRepository));
+builder.Services.AddScoped(typeof(IDiyetProgramRepository), typeof(DiyetProgramRepository));
+builder.Services.AddScoped(typeof(IDiyetBesinRepository), typeof(DiyetBesinRepository));
+builder.Services.AddScoped(typeof(IEgzersizNotRepository), typeof(EgzersizNotRepository));
+
 builder.Services.AddScoped(typeof(IKullaniciService), typeof(KullaniciService));
 builder.Services.AddScoped(typeof(IEgzersizBilgiService), typeof(EgzersizBilgiService));
 builder.Services.AddScoped(typeof(IEgzersizProgramService), typeof(EgzersizProgramService));
 builder.Services.AddScoped(typeof(IDiyetProgramService), typeof(DiyetProgramService));
 builder.Services.AddScoped(typeof(IDiyetBesinService), typeof(DiyetBesinService));
+builder.Services.AddScoped(typeof(IEgzersizNotService), typeof(EgzersizNotService));
 
 
 

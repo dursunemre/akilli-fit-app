@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Infrastructure.Repositories
 {
-    public class EgzersizBilgiRepository
+    public class EgzersizBilgiRepository : IEgzersizBilgiRepository
     {
         private readonly IGenericRepository<EgzersizBilgi> _repository;
         private readonly AkilliFitAppDbContext _context;

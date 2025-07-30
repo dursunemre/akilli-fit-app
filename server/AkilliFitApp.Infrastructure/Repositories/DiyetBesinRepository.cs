@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AkilliFitApp.Infrastructure.Repositories
 {
-    internal class DiyetBesinRepository : IDiyetBesinRepository
+    public class DiyetBesinRepository : IDiyetBesinRepository
     {
         private readonly IGenericRepository<DiyetBesin> _repository;
         private readonly AkilliFitAppDbContext _context;

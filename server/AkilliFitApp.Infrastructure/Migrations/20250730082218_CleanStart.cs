@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AkilliFitApp.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class YeniBirBaslangic : Migration
+    public partial class CleanStart : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -47,16 +47,18 @@ namespace AkilliFitApp.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DiyetProgramlari",
+                name: "EgzersizNotlari",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Icerik = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EgzersizBilgiId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DiyetProgramlari", x => x.Id);
+                    table.PrimaryKey("PK_EgzersizNotlari", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,7 +77,8 @@ namespace AkilliFitApp.Infrastructure.Migrations
                 name: "Kullanicilar",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Soyad = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DogumTarihi = table.Column<DateOnly>(type: "date", nullable: false),
@@ -91,28 +94,21 @@ namespace AkilliFitApp.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DiyetBesinleri",
+                name: "DiyetProgramlari",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Gramaj = table.Column<double>(type: "float", nullable: false),
-                    BesinId = table.Column<int>(type: "int", nullable: false),
-                    DiyetProgramsId = table.Column<int>(type: "int", nullable: false)
+                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    KullaniciId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DiyetBesinleri", x => x.Id);
+                    table.PrimaryKey("PK_DiyetProgramlari", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DiyetBesinleri_Besinler_BesinId",
-                        column: x => x.BesinId,
-                        principalTable: "Besinler",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DiyetBesinleri_DiyetProgramlari_DiyetProgramsId",
-                        column: x => x.DiyetProgramsId,
-                        principalTable: "DiyetProgramlari",
+                        name: "FK_DiyetProgramlari_Kullanicilar_KullaniciId",
+                        column: x => x.KullaniciId,
+                        principalTable: "Kullanicilar",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -124,7 +120,7 @@ namespace AkilliFitApp.Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    KullaniciId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    KullaniciId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -133,7 +129,35 @@ namespace AkilliFitApp.Infrastructure.Migrations
                         name: "FK_EgzersizProgramlari_Kullanicilar_KullaniciId",
                         column: x => x.KullaniciId,
                         principalTable: "Kullanicilar",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DiyetBesinleri",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Gramaj = table.Column<double>(type: "float", nullable: false),
+                    BesinId = table.Column<int>(type: "int", nullable: false),
+                    DiyetProgramId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DiyetBesinleri", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DiyetBesinleri_Besinler_BesinId",
+                        column: x => x.BesinId,
+                        principalTable: "Besinler",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DiyetBesinleri_DiyetProgramlari_DiyetProgramId",
+                        column: x => x.DiyetProgramId,
+                        principalTable: "DiyetProgramlari",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -221,9 +245,20 @@ namespace AkilliFitApp.Infrastructure.Migrations
                 column: "BesinId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DiyetBesinleri_DiyetProgramsId",
+                name: "IX_DiyetBesinleri_DiyetProgramId",
                 table: "DiyetBesinleri",
-                column: "DiyetProgramsId");
+                column: "DiyetProgramId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DiyetProgramlari_KullaniciId",
+                table: "DiyetProgramlari",
+                column: "KullaniciId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EgzersizNotlari_EgzersizBilgiId",
+                table: "EgzersizNotlari",
+                column: "EgzersizBilgiId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_EgzersizProgramlari_KullaniciId",
@@ -260,6 +295,9 @@ namespace AkilliFitApp.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "DiyetBesinleri");
+
+            migrationBuilder.DropTable(
+                name: "EgzersizNotlari");
 
             migrationBuilder.DropTable(
                 name: "KardiyoEgzersizBilgileri");

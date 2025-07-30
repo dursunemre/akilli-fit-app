@@ -1,4 +1,5 @@
 ﻿using AkilliFitApp.Application.Interfaces.IRepository;
+using AkilliFitApp.Application.Interfaces.IService;
 using AkilliFitApp.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AkilliFitApp.Application.Services
 {
-    public class DiyetBesinService
+    public class DiyetBesinService : IDiyetBesinService
     {
         private readonly IDiyetBesinRepository _repository;
 

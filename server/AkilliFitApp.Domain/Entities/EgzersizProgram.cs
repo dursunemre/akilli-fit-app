@@ -7,6 +7,7 @@
 
         public int KullaniciId { get; set; }
         public required Kullanici Kullanici { get; set; }
+
         public ICollection<EgzersizBilgi> EgzersizBilgi { get; set; } = [];
 
         public EgzersizProgram() { }

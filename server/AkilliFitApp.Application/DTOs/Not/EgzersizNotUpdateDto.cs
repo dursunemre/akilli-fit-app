@@ -10,6 +10,5 @@ namespace AkilliFitApp.Application.DTOs.Not
     {
         public string Ad { get; set; } = string.Empty;
         public string Icerik { get; set; } = string.Empty;
-        public int EgzersizBilgiId { get; set; }
     }
 }

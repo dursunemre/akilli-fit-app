@@ -149,6 +149,33 @@ namespace AkilliFitApp.Infrastructure.Migrations
                     b.UseTpcMappingStrategy();
                 });
 
+            modelBuilder.Entity("AkilliFitApp.Domain.Entities.EgzersizNot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Ad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EgzersizBilgiId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Icerik")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EgzersizBilgiId")
+                        .IsUnique();
+
+                    b.ToTable("EgzersizNotlari");
+                });
+
             modelBuilder.Entity("AkilliFitApp.Domain.Entities.EgzersizProgram", b =>
                 {
                     b.Property<int>("Id")
@@ -288,7 +315,7 @@ namespace AkilliFitApp.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AkilliFitApp.Domain.Entities.DiyetProgram", "DiyetPrograms")
+                    b.HasOne("AkilliFitApp.Domain.Entities.DiyetProgram", "DiyetProgram")
                         .WithMany("DiyetBesinleri")
                         .HasForeignKey("DiyetProgramId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -296,7 +323,7 @@ namespace AkilliFitApp.Infrastructure.Migrations
 
                     b.Navigation("Besin");
 
-                    b.Navigation("DiyetPrograms");
+                    b.Navigation("DiyetProgram");
                 });
 
             modelBuilder.Entity("AkilliFitApp.Domain.Entities.DiyetProgram", b =>
@@ -327,6 +354,17 @@ namespace AkilliFitApp.Infrastructure.Migrations
                     b.Navigation("Egzersiz");
 
                     b.Navigation("EgzersizProgram");
+                });
+
+            modelBuilder.Entity("AkilliFitApp.Domain.Entities.EgzersizNot", b =>
+                {
+                    b.HasOne("AkilliFitApp.Domain.Entities.EgzersizBilgi", "EgzersizBilgi")
+                        .WithOne("EgzersizNot")
+                        .HasForeignKey("AkilliFitApp.Domain.Entities.EgzersizNot", "EgzersizBilgiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EgzersizBilgi");
                 });
 
             modelBuilder.Entity("AkilliFitApp.Domain.Entities.EgzersizProgram", b =>
@@ -362,6 +400,11 @@ namespace AkilliFitApp.Infrastructure.Migrations
             modelBuilder.Entity("AkilliFitApp.Domain.Entities.DiyetProgram", b =>
                 {
                     b.Navigation("DiyetBesinleri");
+                });
+
+            modelBuilder.Entity("AkilliFitApp.Domain.Entities.EgzersizBilgi", b =>
+                {
+                    b.Navigation("EgzersizNot");
                 });
 
             modelBuilder.Entity("AkilliFitApp.Domain.Entities.EgzersizProgram", b =>
